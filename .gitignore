@@ -14,3 +14,5 @@ datasecret
 
 package-lock.json
 database.json
+.env
+yarn.lock

@@ -9,6 +9,9 @@ import chalk from 'chalk';
 import mddd5 from 'md5';
 import ws from 'ws';
 let mconn;
+import dotenv from 'dotenv'
+
+dotenv.config()
 
 /**
  * @type {import('@whiskeysockets/baileys')}
