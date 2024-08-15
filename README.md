@@ -1,9 +1,9 @@
-# `𝙏𝙃𝙀 𝙈𝙔𝙎𝙏𝙄𝘾 - 𝘽𝙊𝙏`
+# `O Sombrio | WhatsappBot`
 
 ------------------
-> **AVISO**: Eu, "Bruno Sobrino", me retirei de tudo relacionado ao bot ou temas similares, então em algum momento ele ficará obsoleto e/ou alguns comandos pararão de funcionar. Agradeço sua preferência durante essa jornada pelo mundo dos bots.
+> **AVISO**: Este projeto e baseado em um repositorio de "Bruno Sobrino", Atualmente este repositorio tem sido mantido pela comunidade. 
 
-> TheMystic-Bot-MD agora está nas mãos dos colaboradores, sendo Aiden_NotLogic o principal representante.
+> O Bot Sombrio é uma replica de TheMystic-Bot-MD 
 ------------------
 
 ### `▢ CONTAS OFICIAIS`
@@ -183,4 +183,5 @@ No diretório raiz do seu projeto, crie um arquivo chamado `.env`. Este arquivo 
 <a href="https://github.com/WhiskeySockets/Baileys"><img src="https://github.com/WhiskeySockets.png" width="150" height="150" alt="adiwajshing"/></a>
 
 ## `▢ PROPRIETÁRIO DO BOT`
+<a href="https://github.com/jeffersonalionco"><img src="https://github.com/jeffersonalionco.png" width="250" height="250" alt="BrunoSobrino"/></a>
 <a href="https://github.com/BrunoSobrino"><img src="https://github.com/BrunoSobrino.png" width="250" height="250" alt="BrunoSobrino"/></a>
