@@ -33,6 +33,8 @@ const PORT = process.env.PORT || process.env.SERVER_PORT || 3000;
 protoType();
 serialize();
 
+
+// Neste bloco de codigo, são criado três funções globais onde podemos usar (__filename() retorno o caminho absoluto atual  - __dirname() retorna caminho da pasta raiz e a função __require() - para bscar um modulo especifico)
 global.__filename = function filename(pathURL = import.meta.url, rmPrefix = platform !== 'win32') {
   return rmPrefix ? /file:\/\/\//.test(pathURL) ? fileURLToPath(pathURL) : pathURL : pathToFileURL(pathURL).toString();
 }; global.__dirname = function dirname(pathURL) {
@@ -41,8 +43,10 @@ global.__filename = function filename(pathURL = import.meta.url, rmPrefix = plat
   return createRequire(dir);
 };
 
+// Variavel que faz consultas no arquivo api. USO: global.APIs = { foo: 'https://api.foo.com' };
 global.API = (name, path = '/', query = {}, apikeyqueryname) => (name in global.APIs ? global.APIs[name] : name) + path + (query || apikeyqueryname ? '?' + new URLSearchParams(Object.entries({...query, ...(apikeyqueryname ? {[apikeyqueryname]: global.APIKeys[name in global.APIs ? global.APIs[name] : name]} : {})})) : '');
 
+//Essa linha de código cria um registro de timestamp que marca o momento em que o código foi executado
 global.timestamp = {start: new Date};
 global.videoList = [];
 global.videoListXXX = [];
@@ -52,8 +56,12 @@ const __dirname = global.__dirname(import.meta.url);
 global.opts = new Object(yargs(process.argv.slice(2)).exitProcess(false).parse());
 global.prefix = new RegExp('^[' + (opts['prefix'] || '*/i!#$%+£¢€¥^°=¶∆×÷π√✓©®:;?&.\\-.@').replace(/[|\\{}()[\]^$+*?.\-\^]/g, '\\$&') + ']');
 
+//Essa linha de código cria um banco de dados usando a biblioteca Low e configura o adaptador de banco de dados com base nas opções fornecidas.
 global.db = new Low(/https?:\/\//.test(opts['db'] || '') ? new cloudDBAdapter(opts['db']) : new JSONFile(`${opts._[0] ? opts._[0] + '_' : ''}database.json`));
 
+
+
+// Carrega o Banco de Dados na raiz do projeto.
 global.DATABASE = global.db; 
 global.loadDatabase = async function loadDatabase() {
   if (global.db.READ) {
@@ -83,6 +91,8 @@ loadDatabase();
 
 /* Creditos a Otosaka (https://wa.me/51993966345) */
 
+
+// Criando o banco chatgpt, para configurar o arquivo chatgpt
 global.chatgpt = new Low(new JSONFile(path.join(__dirname, '/db/chatgpt.json')));
 global.loadChatgptDB = async function loadChatgptDB() {
   if (global.chatgpt.READ) {
@@ -106,6 +116,7 @@ global.loadChatgptDB = async function loadChatgptDB() {
 };
 loadChatgptDB();
 
+
 /* ------------------------------------------------*/
 
 global.authFile = `MysticSession`;
@@ -114,6 +125,7 @@ const msgRetryCounterMap = (MessageRetryMap) => { };
 const msgRetryCounterCache = new NodeCache()
 const {version} = await fetchLatestBaileysVersion();
 let phoneNumber = global.botnumber
+
 
 const methodCodeQR = process.argv.includes("qr")
 const methodCode = !!phoneNumber || process.argv.includes("code")
@@ -129,15 +141,17 @@ opcion = '1'
 if (!methodCodeQR && !methodCode && !fs.existsSync(`./${authFile}/creds.json`)) {
 do {
 let lineM = '⋯ ⋯ ⋯ ⋯ ⋯ ⋯ ⋯ ⋯ ⋯ ⋯ ⋯ 》'
-opcion = await question('[ ℹ️ ] Seleccione una opción:\n1. Con código QR\n2. Con código de texto de 8 dígitos\n---> ')
+opcion = await question('[ ℹ️ ] Selecione uma Opção:\n1. Com QrCode \n2. Com codigo de 8 dígitos\n---> ')
 //if (fs.existsSync(`./${authFile}/creds.json`)) {
 //console.log(chalk.bold.redBright(`PRIMERO BORRE EL ARCHIVO ${chalk.bold.greenBright("creds.json")} QUE SE ENCUENTRA EN LA CARPETA ${chalk.bold.greenBright(authFile)} Y REINICIE.`))
 //process.exit()
 if (!/^[1-2]$/.test(opcion)) {
-console.log('[ ❗ ] Por favor, seleccione solo 1 o 2.\n')
+console.log('[ ❗ ] Por favor Selecione a opção 1 ou 2.\n')
 }} while (opcion !== '1' && opcion !== '2' || fs.existsSync(`./${authFile}/creds.json`))
 }
 
+
+// Parametros das conexões com o whatsapp atraves da biblioteca @adiwajshing/baileys
 console.info = () => {} //dejará de aparecer la molesta "pre-key"
 const connectionOptions = {
 logger: pino({ level: 'silent' }),
@@ -161,6 +175,7 @@ defaultQueryTimeoutMs: undefined,
 version
 }
 
+// Criando uma conexão com o whatsapp atraves do parametros passados acima.
 global.conn = makeWASocket(connectionOptions);
 
 if (!fs.existsSync(`./${authFile}/creds.json`)) {
