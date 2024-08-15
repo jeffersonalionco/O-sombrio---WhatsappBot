@@ -186,23 +186,23 @@ if (opcion === '2' || methodCode) {
 //}
 opcion = '2'
 if (!conn.authState.creds.registered) {  
-if (MethodMobile) throw new Error('No se puede usar un código de emparejamiento con la API móvil')
+if (MethodMobile) throw new Error('Não é possível usar um código de pareamento com a API Mobile')
 
 let numeroTelefono
 if (!!phoneNumber) {
 numeroTelefono = phoneNumber.replace(/[^0-9]/g, '')
 if (!Object.keys(PHONENUMBER_MCC).some(v => numeroTelefono.startsWith(v))) {
-console.log(chalk.bgBlack(chalk.bold.redBright("Comience con el código de país de su número de WhatsApp.\nEjemplo: +5219992095479\n")))
+console.log(chalk.bgBlack(chalk.bold.redBright("Comece com o código do país do seu número do WhatsApp.\nExemplo: +5545998306644\n")))
 process.exit(0)
 }} else {
 while (true) {
-numeroTelefono = await question(chalk.bgBlack(chalk.bold.yellowBright('Por favor, escriba su número de WhatsApp.\nEjemplo: +5219992095479\n')))
+numeroTelefono = await question(chalk.bgBlack(chalk.bold.yellowBright('Por favor, escreva seu número do WhatsApp.\nExemplo: +5545998306644\n')))
 numeroTelefono = numeroTelefono.replace(/[^0-9]/g, '')
 
 if (numeroTelefono.match(/^\d+$/) && Object.keys(PHONENUMBER_MCC).some(v => numeroTelefono.startsWith(v))) {
 break 
 } else {
-console.log(chalk.bgBlack(chalk.bold.redBright("Por favor, escriba su número de WhatsApp.\nEjemplo: +5219992095479.\n")))
+console.log(chalk.bgBlack(chalk.bold.redBright("Por favor, escreva seu número do WhatsApp.\nExemplo: +5545998306644.\n")))
 }}
 rl.close()  
 } 
@@ -210,15 +210,15 @@ rl.close()
         setTimeout(async () => {
             let codigo = await conn.requestPairingCode(numeroTelefono)
             codigo = codigo?.match(/.{1,4}/g)?.join("-") || codigo
-            console.log(chalk.yellow('[ ℹ️ ] introduce el código de emparejamiento en WhatsApp.'));
-            console.log(chalk.black(chalk.bgGreen(`Su código de emparejamiento: `)), chalk.black(chalk.white(codigo)))
+            console.log(chalk.yellow('[ ℹ️ ] digite o código de pareamento no WhatsApp.'));
+            console.log(chalk.black(chalk.bgGreen(`Seu código de pareamento: `)), chalk.black(chalk.white(codigo)))
         }, 3000)
 }}
 }
 
 conn.isInit = false;
 conn.well = false;
-conn.logger.info(`[ ℹ️ ] Cargando...\n`);
+conn.logger.info(`[ ℹ️ ] Caregando...\n`);
 
 if (!opts['test']) {
   if (global.db) {
