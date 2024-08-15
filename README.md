@@ -15,7 +15,7 @@
 [![Clique Aqui](https://img.shields.io/badge/Grupo-Suporte-25D366?style=for-the-badge&logo=whatsapp&logoColor=white)](https://chat.whatsapp.com/J8tFq87Ia0jEnx20NvCQxN)
 
 ### `▢ DOAR`
-- Agradeça com uma doação voluntária clicando [aqui](link.mercadopago.com.br/jeffersonalionco)
+- Agradeça com uma doação voluntária clicando [aqui](https://link.mercadopago.com.br/jeffersonalionco)
 
 
 <!-- Este menú de instalación es temporal. By Jeffersonalionco -->
