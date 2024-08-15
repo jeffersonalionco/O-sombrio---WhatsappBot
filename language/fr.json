@@ -2611,9 +2611,7 @@
             ],
             "texto2": "_< Options de langue 🌎 >_ ",
             "texto3": "_< Langue des groupes >_",
-            "texto4": " *_🚀 Nouveau jeu de rôle pour l'extraction minière_*",
-            "texto5": "Faites un don",
-            "texto6": "Cela permettra de maintenir le serveur actif."
+            "texto4": " *_🚀 Nouveau jeu de rôle pour l'extraction minière_*"
         },
         "mipilot_serbot_broadcast": {
             "texto1": "*〔 DIFFUSION AUX SOUS-BOTS 〕*\n\n",
@@ -2671,7 +2669,7 @@
                 "*- Commit par :*"
             ],
             "texto3": "*[❗] Erreur lors de la vérification du référentiel*"
-        },
+            },
         "owner_add_del_owner": {
             "texto1": [
                 "*[❗] Utilisation incorrecte de la commande.*\n\n*—◉ Exemple d'utilisation valide :*\n*◉",
@@ -2954,12 +2952,12 @@
             "texto1": "Entrez le nom et le dossier de l'image que vous souhaitez visualiser.",
             "texto2": "L'image n'existe pas dans le dossier racine."
         },
-        "owner_actualizar": {
-            "texto1": "*_< PROPRIÉTAIRE - MISS Á JOUR />_*\n\n*[✅] Il n'y a pas de mises à jour en attente.*",
-            "texto2": "*_< PROPRIÉTAIRE - MISS Á JOUR />_*\n\n*[ℹ️] Mise à jour terminée avec succès.*\n\n",
-            "texto3": "*_< PROPRIÉTAIRE - MISS Á JOUR />_*\n\n*[ℹ️] Les modifications locales ont été apportées dans des fichiers bot qui entrent en conflit avec les mises à jour du référentiel. Pour mettre à jour, réinstaller le bot ou effectuer les mises à jour manuellement.*\n\n*fichiers de conflit:*",
-            "texto4": "*_< PROPRIÉTAIRE - MISS Á JOUR />_*\n\n*[ℹ️] Une erreur s'est produite. Veuillez réessayer plus tard.*"
-        },
+         "owner_actualizar": {
+ "texto1": "*_< PROPRIÉTAIRE - MISS Á JOUR />_*\n\n*[✅] Il n'y a pas de mises à jour en attente.*",
+ "texto2": "*_< PROPRIÉTAIRE - MISS Á JOUR />_*\n\n*[ℹ️] Mise à jour terminée avec succès.*\n\n",
+ "texto3": "*_< PROPRIÉTAIRE - MISS Á JOUR />_*\n\n*[ℹ️] Les modifications locales ont été apportées dans des fichiers bot qui entrent en conflit avec les mises à jour du référentiel. Pour mettre à jour, réinstaller le bot ou effectuer les mises à jour manuellement.*\n\n*fichiers de conflit:*",
+ "texto4": "*_< PROPRIÉTAIRE - MISS Á JOUR />_*\n\n*[ℹ️] Une erreur s'est produite. Veuillez réessayer plus tard.*"
+ },
         "random_kpop": {
             "texto1": [
                 "Usage",
@@ -3471,24 +3469,18 @@
         },
         "_language": {
             "texto1": [
-                "\n\n_Pour changer de langue, envoyez la commande avec l'abréviation de la langue souhaitée\n\n👉Exemple :",
-                "Langues disponibles :\n🇪🇸 es - Espagnol\n🇧🇷 pt-br - Portugais\n🇬🇧 en - Anglais\n🇷🇺 ru - Russe\n🇫🇷 fr - Français\n🇸🇦 ar - Arabe\n\n_Les traductions sont en cours de développement, il peut y avoir quelques erreurs_",
-                "🗣 CONFIGURATION DE LA LANGUE DU BOT\n",
-                "[!] Votre langue actuelle est :"
+            "\n\n_Pour changer de langue, envoyez la commande avec l'abréviation de la langue souhaitée\n\n👉Exemple :",
+            "Langues disponibles :\n🇪🇸 es - Espagnol\n🇧🇷 pt-br - Portugais\n🇬🇧 en - Anglais\n🇷🇺 ru - Russe\n🇫🇷 fr - Français\n🇸🇦 ar - Arabe\n\n_Les traductions sont en cours de développement, il peut y avoir quelques erreurs_",
+            "🗣 CONFIGURATION DE LA LANGUE DU BOT\n",
+            "[!] Votre langue actuelle est :"
             ],
             "texto2": [
-                "🗣 LANGUE DU GROUPE\n\n_Envoyez la commande avec l'abréviation de la langue souhaitée_\n\n👉Exemple :",
-                "Langues disponibles :\n🇪🇸 es - Espagnol\n🇧🇷 pt-br - Portugais\n🇬🇧 en - Anglais\n🇷🇺 ru - Russe\n🇫🇷 fr - Français\n🇸🇦 ar - Arabe\n\n_Les traductions sont en cours de développement, il peut y avoir quelques erreurs_"
+            "🗣 LANGUE DU GROUPE\n\n_Envoyez la commande avec l'abréviation de la langue souhaitée_\n\n👉Exemple :",
+            "Langues disponibles :\n🇪🇸 es - Espagnol\n🇧🇷 pt-br - Portugais\n🇬🇧 en - Anglais\n🇷🇺 ru - Russe\n🇫🇷 fr - Français\n🇸🇦 ar - Arabe\n\n_Les traductions sont en cours de développement, il peut y avoir quelques erreurs_"
             ],
             "texto3": "[ ! ] Cette commande ne peut être utilisée que dans les groupes",
             "texto4": "[ ! ] Cette commande ne peut être utilisée que par les Administrateurs"
-        },
-        "doar": {
-            "texto1": [
-                "🤩 *Participez,* _c'est avec votre aide que ce système continue de fonctionner._ \n\n🌟Souhaitez-vous faire un don par carte de crédit:\n*15,00 €* -",
-                "_Ce lien a été généré par le bot_ Complétez votre don sur le site web.\n\nPayPal : Jeffersonalionco@gmail.com"
-            ]
-        }
+            }
     },
     "handler": {
         "handler": {
@@ -3560,5 +3552,6 @@
             "bk9LText_T": "Si vous le voulez sans personnalisation :\n.bk9short et mettez un lien\nExemple :\n.bk9short https://bk9.site/\nSi vous voulez qu'il soit personnalisé :\n.Short, mettez un lien + le mot\nExemple :\n.bk9short https://bk9.site/ + Suii",
             "bk9LTaked_T": "Cette personnalisation a été prise, essayez une autre."
         }
-    }
+
+        }
 }

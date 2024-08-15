@@ -2939,9 +2939,7 @@
             ],
             "texto2": "Opciones de idioma 🌎",
             "texto3": "_lenguaje grupal_",
-            "texto4": " *_🚀 Nuevo juego de rol para minería_*",
-            "texto5": "Haz una donación",
-            "texto6": "Esto mantendrá el servidor activo."
+            "texto4": " *_🚀 Nuevo juego de rol para minería_*"
         },
         "mipilot_serbot_broadcast": {
             "texto1": "*〔 DIFUSION A SUB BOTS 〕*\n\n",
@@ -2999,7 +2997,7 @@
                 "*- Commit por:*"
             ],
             "texto3": "*[❗] Error al verificar el repositorio*"
-        },
+            },
         "owner_add_del_owner": {
             "texto1": [
                 "*[❗] Uso incorrecto del comando.*\n\n*—◉ Ejemplo de uso válido:*\n*◉",
@@ -3810,12 +3808,6 @@
             ],
             "texto3": "[ ! ] Este comando solo se puede usar en grupos",
             "texto4": "[ ! ] Este comando solo puede ser utilizado por Administradores"
-        },
-        "doar": {
-            "texto1": [
-                "🤩 *Colabora,* _es con tu ayuda que este sistema sigue funcionando._ \n\n🌟¿Deseas hacer tu donación con tarjeta de crédito:\n*$15.00* -",
-                "_Este enlace fue generado por el bot_ Completa tu donación en el sitio web.\n\nPayPal: Jeffersonalionco@gmail.com"
-            ]
         }
     },
     "handler": {
@@ -3888,5 +3880,6 @@
             "bk9LText_T": "Si lo quieres sin personalización,:\n.bk9short y ponle un enlace\nEjemplo:\n.bk9short https://bk9.site/\nSi lo quieres personalizado:\n.Short, ponle un enlace + el word\nEjemplo:\n.bk9short https://bk9.site/ + Suii",
             "bk9LTaked_T": "Esta personalización ha sido realizada, pruebe con otra."
         }
-    }
+
+        }
 }

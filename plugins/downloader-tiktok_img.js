@@ -5,7 +5,7 @@
 ////////////////////////////////////
 
 import axios from 'axios';
-import * as cheerio from 'cheerio';
+import cheerio from 'cheerio';
 
 
 let handler = async (m, { conn, text: tiktok, args, command, usedPrefix }) => {

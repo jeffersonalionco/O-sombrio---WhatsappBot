@@ -2923,9 +2923,7 @@
             ],
             "texto2": "_< Opções idioma 🌎 >_ ",
             "texto3": "_< Idioma de Grupos >_",
-            "texto4": " *_🚀Novo Jogo RPG, para mineração_*",
-            "texto5" : "Faça uma doação",
-            "texto6": "Isso vai mater o servidor ativo."
+            "texto4": " *_🚀Novo Jogo RPG, para mineração_*"
         },
         "mipilot_serbot_broadcast": {
             "texto1": "*〔 DIFUSIÓN A SUB BOTS 〕*\n\n",
@@ -2983,7 +2981,7 @@
                 "*- Commit por:*"
             ],
             "texto3": "*[❗] Erro ao verificar o repositório*"
-        },
+            },
         "owner_add_del_owner": {
             "texto1": [
                 "*[❗] Uso incorreto do comando.*\n\n*—◉ Exemplo de uso válido:*\n*◉",
@@ -3267,11 +3265,11 @@
             "texto2": "A imagem não existe na pasta raiz."
         },
         "owner_actualizar": {
-            "texto1": "*_< PROPIETÁRIO - ATUALIZAÇÃO />_*\n\n*[✅] Não há atualizações pendentes.*",
-            "texto2": "*_< PROPIETÁRIO - ATUALIZAÇÃO />_*\n\n*[ℹ️] Atualização concluída com sucesso.*\n\n",
-            "texto3": "*_< PROPIETÁRIO - ATUALIZAÇÃO />_*\n\n*[ℹ️] Alterações locais foram feitas em arquivos bot que conflitam com as atualizações do repositório. Para atualizar, reinstalar o bot ou executar as atualizações manualmente.*\n\n*arquivos de conflito:*",
-            "texto4": "*_< PROPIETÁRIO - ATUALIZAÇÃO />_*\n\n*[ℹ️] Um erro ocorreu. Por favor, tente novamente mais tarde.*"
-        },
+ "texto1": "*_< PROPIETÁRIO - ATUALIZAÇÃO />_*\n\n*[✅] Não há atualizações pendentes.*",
+ "texto2": "*_< PROPIETÁRIO - ATUALIZAÇÃO />_*\n\n*[ℹ️] Atualização concluída com sucesso.*\n\n",
+ "texto3": "*_< PROPIETÁRIO - ATUALIZAÇÃO />_*\n\n*[ℹ️] Alterações locais foram feitas em arquivos bot que conflitam com as atualizações do repositório. Para atualizar, reinstalar o bot ou executar as atualizações manualmente.*\n\n*arquivos de conflito:*",
+ "texto4": "*_< PROPIETÁRIO - ATUALIZAÇÃO />_*\n\n*[ℹ️] Um erro ocorreu. Por favor, tente novamente mais tarde.*"
+ },
         "random_kpop": {
             "texto1": [
                 "Uso",
@@ -3794,48 +3792,6 @@
             ],
             "texto3": "*[ ! ]* _Este comando só pode ser usado em grupos_",
             "texto4": "*[ ! ]* _Este comando só pode ser usado por *Administradores*_"
-        },
-        "game_glx": {
-            "texto1": [
-                "*╔═ 🪐GAME DA GALAXIA🪐 ═╗*",
-                "👨‍🚀 Olá ",
-                "está na hora de viajar pelo espaço, minerar asteroides, conversar com alienígenas e muito mais no mundo galático!",
-                "*💰 Moeda:*",
-                "_Para se cadastrar no GLX_",
-                "  _Veja seus dados, e sua evolução._",
-                "> 🧾 Ataques / Defesa / Viajar",
-                "_Para Listar todos os jogadores do game!_",
-                "_Ataque um usuario informando seu username!_",
-                "_Atualizar dados Planeta e Colonia_",
-                " _Você quer visitar outro Planeta? Bora!_",
-                "> 🧾 Opções de Mineraçãos",
-                "_Quer ganhar Dinheiro? Vamos minerar._",
-                "> 🧾 Sua informações Particular",
-                "_Acesso sua carteira financeira._",
-                "_Conheça nossa loja da galáxia_",
-                " _Veja seus itens guardados_",
-                "_Informações do criador do jogo.._",
-                " _Sobre o jogo Galáxia_",
-                " _Novidades Atualização automatico_",
-                "_Dúvidas entre em contato_",
-                "*╘═══════════════════╛*"
-            ],
-            "texto2": [
-                "*_⚔️ VOCÊ AGORA É UM MEMBRO ESTELAR 🪐_*",
-                "Sua informações no Mundo da Galáxia!",
-                "*🧑Nome:",
-                "*🌐Username:",
-                "*⏹️Status:",
-                "*🚀Tem Nave:",
-                "🏠 Onde você mora?:",
-                "*🪐Seu Planeta: "
-            ]
-        },
-        "doar":{
-            "texto1":[
-                "🤩 *Colabore,* _é com sua ajuda que este sistema continua funcionando._ \n\n🌟Deseja fazer sua doação pelo cartão de crédito:\n*R$15.00* -",
-                "_Este link foi gerado pelo bot_ Conclua sua doação no site.\n\nPayPal: Jeffersonalionco@gmail.com"
-            ]
         }
     },
     "handler": {
@@ -3908,5 +3864,6 @@
             "bk9LText_T": "Se você quiser sem personalização:\n.bk9short e coloque um link\nExemplo:\n.bk9short https://bk9.site/\nSe você quiser que seja personalizado:\n.Short, coloque um link + a palavra\nExemplo:\n.bk9short https://bk9.site/ + Suii",
             "bk9LTaked_T": "Essa personalização já foi usada, tente outra."
         }
-    }
+
+        }
 }
