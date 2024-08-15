@@ -15,7 +15,36 @@
 [![Clique Aqui](https://img.shields.io/badge/Grupo-Suporte-25D366?style=for-the-badge&logo=whatsapp&logoColor=white)](https://chat.whatsapp.com/J8tFq87Ia0jEnx20NvCQxN)
 
 ### `▢ DOAR`
-- Agradeça com uma doação voluntária clicando [aqui](https://www.paypal.me/TheShadowBrokers133)
+- Agradeça com uma doação voluntária clicando [aqui](link.mercadopago.com.br/jeffersonalionco)
+
+
+<!-- Este menú de instalación es temporal. By Jeffersonalionco -->
+### `▢ Instalar`
+
+Para configur e Inicializar este projeto, siga os passos:
+
+1. **Instalar Yarn** (Se ainda nao tiver instalado):
+   ```bash
+   npm install -g yarn
+2. **Executar o Yarn** 
+   ```bash
+   yarn install
+3. **Executar o npm** 
+   ```bash
+   npm install
+4. **INICIAR O BOT** 
+   ```bash
+   npm start
+## Configuração do Arquivo `.env`
+
+### Passo 1: Criar o Arquivo `.env`
+
+No diretório raiz do seu projeto, crie um arquivo chamado `.env`. Este arquivo será usado para armazenar as variáveis de ambiente, como as chaves de API da Stripe e Bitly.
+ 
+1. **Crie as seguintes chaves dentro do .env**
+    ```bash
+    KEY_STRIPE=Colque-sua-chave-aqui / https://stripe.com/br
+    KEY_BITLY=Coloque-sua-chave-aqui / http://bit.ly/
 
 ### `▢ PLUGINS`
 - Tem ideias de plugins ou quer obter mais plugins? Então clique [aqui](https://github.com/theh2so4/Mystic-Plugins)
