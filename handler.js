@@ -503,6 +503,7 @@ export async function handler(chatUpdate) {
         if (!user.premium) user.premiumTime = 0;
         if (!user.wait) user.wait = 0;
         if (!user.rtrofi) user.rtrofi = 'Bronce';
+        
       } else {
         global.db.data.users[m.sender] = {
           afk: -1,
@@ -909,6 +910,7 @@ export async function handler(chatUpdate) {
           wortel: 0,
           language: 'es',
           gameglx: {},
+          license: {}
         };
       }
       const akinator = global.db.data.users[m.sender].akinator;

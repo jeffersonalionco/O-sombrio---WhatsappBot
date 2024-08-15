@@ -38,8 +38,8 @@ const handler = async (m, { args, usedPrefix, command, isAdmin }) => {
                         quantity: 1,
                     }],
                     mode: 'payment',
-                    success_url: 'https://seusite.com/success', // URL de sucesso
-                    cancel_url: 'https://seusite.com/cancel', // URL de cancelamento
+                    success_url: 'https://link.mercadopago.com.br/jeffersonalionco', // URL de sucesso
+                    cancel_url: 'https://link.mercadopago.com.br/jeffersonalionco', // URL de cancelamento
                 });
 
                 console.log('Link de pagamento: ', session.url);
@@ -60,6 +60,8 @@ const handler = async (m, { args, usedPrefix, command, isAdmin }) => {
         // Busque os dados no arquivo .env no inicio do projeto
         const BITLY_ACCESS_TOKEN = KEY_BITLY;
 
+
+        // Função para encurtar os URL com o bitly
         async function shortenUrl(longUrl) {
             try {
                 const response = await axios.post(
@@ -98,7 +100,7 @@ const handler = async (m, { args, usedPrefix, command, isAdmin }) => {
         // Para enviar um documento com descrição muito boa essa função.
         // conn.sendMessage(m.chat,  {document: {url: filePath}, caption: "teste"})
 
-        conn.sendMessage(m.chat, {image: {url: filePath}, caption: ` ${tradutor.texto1[0]} ${URLencurtada}\n*R$30.00* - ${URLencurtada2}\n*R$40.00* - ${URLencurtada3}\n\n${tradutor.texto1[1]}`})
+        conn.sendMessage(m.chat, {image: {url: filePath}, caption: ` ${tradutor.texto1[0]} ${URLencurtada}\n*R$30.00* - ${URLencurtada2}\n*R$40.00* - ${URLencurtada3}\n\n${tradutor.texto1[1]} \n\n ${tradutor.texto1[2]}`})
 
         //m.reply(`🤩 *Colabore,* _é com sua ajuda que este sistema continua funcionando._ \n\n🌟Deseja fazer sua doação pelo cartão de crédito:\n*R$15.00* - ${URLencurtada}\n*R$30.00* - ${URLencurtada2}\n*R$40.00* - ${URLencurtada3}\n\n_Este link foi gerado pelo bot_ Conclua sua doação no site.`)
 
