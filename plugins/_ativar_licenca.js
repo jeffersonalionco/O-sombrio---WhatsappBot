@@ -102,7 +102,23 @@ const handler = async (m, { args, usedPrefix, command, isAdmin }) => {
                                                     from: 'jeffersonalionco@gmail.com',
                                                     to: 'jeffersonalionco@gmail.com', // email do usuário que receberá o código
                                                     subject: 'Código de Verificação',
-                                                    text: `Você solicitou a validação de sua licença, para utilização do bot O Sombrio\n\nSeu código de verificação é: ${verificationCode} \n\n https://wa.me/5545998306644?text=!ativar%20${verificationCode}`
+                                                    html: `
+                                                    <h1 style="color: #333;">Bem-vindo ao O Sombrio WhatsApp Bot!</h1>
+                                                    <p>Você solicitou a validação de sua licença para utilização do bot <strong>O Sombrio</strong>.</p>
+                                                    <p style="font-size: 16px; color: #555;">
+                                                        <strong>Seu código de verificação é:</strong> 
+                                                        <span style="font-size: 24px; color: #D9534F;">${verificationCode}</span>
+                                                    </p>
+                                                    <p>Para ativar sua licença, clique no link abaixo ou copie e cole no seu WhatsApp:</p>
+                                                    <p>
+                                                        <a href="https://wa.me/5545998306644?text=!ativar%20${verificationCode}" style="color: #007BFF; text-decoration: none;">
+                                                            https://wa.me/5545998306644?text=!ativar%20${verificationCode}
+                                                        </a>
+                                                    </p>
+                                                    <br>
+                                                    <p style="color: #777;">Se você não solicitou essa validação, por favor, ignore este email.</p>
+                                                    <p style="color: #777;">Atenciosamente,<br><strong>Equipe O Sombrio</strong></p>
+                                                `
                                                 };
                         
                                                 // Envia o email
