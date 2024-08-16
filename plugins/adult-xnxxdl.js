@@ -3,6 +3,8 @@ import cheerio from 'cheerio';
 
 
 const handler = async (m, {conn, args, command, usedPrefix}) => {
+  if(global.db.data.users[m.sender].license.status !== true) return m.reply(`Você precisa tem licença para assistir esses videos`)
+
   const datas = global
   const idioma = datas.db.data.users[m.sender].language
   const _translate = JSON.parse(fs.readFileSync(`./language/${idioma}.json`))
