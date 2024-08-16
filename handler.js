@@ -503,7 +503,7 @@ export async function handler(chatUpdate) {
         if (!user.premium) user.premiumTime = 0;
         if (!user.wait) user.wait = 0;
         if (!user.rtrofi) user.rtrofi = 'Bronce';
-        
+
       } else {
         global.db.data.users[m.sender] = {
           afk: -1,
@@ -940,6 +940,23 @@ export async function handler(chatUpdate) {
           soal: null,
         };
       }
+
+      const license = global.db.data.users[m.sender].license
+      if (typeof license !== 'object') {
+        global.db.data.users[m.sender].license = {}
+      }
+      if (license) {
+        if (!('email' in license)) license.email = null;
+        if (!('status' in license)) license.status = false
+        if (!('telefone' in license)) license.telefone = null
+
+      } else {
+        global.db.data.users[m.sender].license = {
+          email: null,
+          status: false,
+          telefone: null
+        }
+      }
       const gameglx = global.db.data.users[m.sender].gameglx
       if (typeof gameglx !== 'object') {
         gameglx = global.db.data.users[m.sender].gameglx = {}
@@ -988,7 +1005,7 @@ export async function handler(chatUpdate) {
         if (!('posicao' in gameglx.perfil.casa.colonia)) gameglx.perfil.casa.colonia.posicao = {};
         if (!('x' in gameglx.perfil.casa.colonia.posicao)) gameglx.perfil.casa.colonia.posicao.x = 0;
         if (!('y' in gameglx.perfil.casa.colonia.posicao)) gameglx.perfil.casa.colonia.posicao.y = 0;
-        
+
         //Posição  em viagens se necessario
         if (!('posicao' in gameglx.perfil.localizacao)) gameglx.perfil.localizacao.posicao = {};
         if (!('x' in gameglx.perfil.localizacao.posicao)) gameglx.perfil.localizacao.posicao.x = 0;
@@ -1016,7 +1033,7 @@ export async function handler(chatUpdate) {
         if (!('compradas' in gameglx.perfil.bolsa.naves)) gameglx.perfil.bolsa.naves.compradas = [];
         if (!('status' in gameglx.perfil.bolsa.naves)) gameglx.perfil.bolsa.naves.status = false;
         // Função de ataque 
-        if(!('ataque' in gameglx.perfil)) gameglx.perfil.ataque = null
+        if (!('ataque' in gameglx.perfil)) gameglx.perfil.ataque = null
         if (gameglx.perfil.ataque === null) gameglx.perfil.ataque = {};
         if (!('sendoAtacado' in gameglx.perfil.ataque)) gameglx.perfil.ataque.sendoAtacado = {};
         if (!('status' in gameglx.perfil.ataque.sendoAtacado)) gameglx.perfil.ataque.sendoAtacado.status = false;
@@ -1028,16 +1045,16 @@ export async function handler(chatUpdate) {
         if (!('hora' in gameglx.perfil.ataque.data)) gameglx.perfil.ataque.data.hora = 0;
         if (!('contagem' in gameglx.perfil.ataque.data)) gameglx.perfil.ataque.data.contagem = 0;
         // Defesa
-        if(!('defesa' in gameglx.perfil)) gameglx.perfil.defesa = {};
-        if(!('forca' in gameglx.perfil.defesa)) gameglx.perfil.defesa.forca = 100;
-        if(!('ataque' in gameglx.perfil.defesa)) gameglx.perfil.defesa.ataque = 40 ;
+        if (!('defesa' in gameglx.perfil)) gameglx.perfil.defesa = {};
+        if (!('forca' in gameglx.perfil.defesa)) gameglx.perfil.defesa.forca = 100;
+        if (!('ataque' in gameglx.perfil.defesa)) gameglx.perfil.defesa.ataque = 40;
 
 
       } else {
         global.db.data.users[m.sender].gameglx = {
           status: false,
           notificacao: {
-            recebidas:[]
+            recebidas: []
           },
           perfil: {
             xp: 112,
@@ -1109,17 +1126,17 @@ export async function handler(chatUpdate) {
             ataque: {
               data: {
                 hora: 0,
-                contagem: 0 
+                contagem: 0
               },
               sendoAtacado: {
                 status: false,
                 atacante: null,
               },
-              forcaAtaque : {
+              forcaAtaque: {
                 ataque: 10
               }
             },
-            defesa : {
+            defesa: {
               forca: 200,
               ataque: 30
             }

@@ -9,6 +9,7 @@ pluginpilot
 plugins/supersecretlistener.js
 src/glx/db/database.json
 datasecret
+src/tmplicense/
 
 #| Files |#
 
