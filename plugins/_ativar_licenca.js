@@ -50,7 +50,7 @@ const handler = async (m, { args, usedPrefix, command, isAdmin }) => {
                             
                             // Aviso no erro
                             let Falha 
-                            if(dadostmp.tentativas + 1 === 3){Falha = `[ERRO]`} else { Falha = `[ACABOU AS TENTATIVAS]`}
+                            if(dadostmp.tentativas + 1 != 3){Falha = `[ERRO]`} else { Falha = `[ACABOU AS TENTATIVAS]`}
 
                             // criar opção de 2 tentativas
                              m.reply(`🚫 *Código inválido.*\n\n*Tentativas:* _${dadostmp.tentativas + 1} de 3 ${Falha}_\n\nParece que algo deu errado. Por favor, verifique o código e tente novamente. Se o problema persistir, entre em contato com nosso suporte.\n\n📲 Painel de licenças */license*`);
