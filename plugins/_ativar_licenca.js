@@ -2,6 +2,8 @@ import Stripe from 'stripe';
 import axios from 'axios';
 import nodemailer from 'nodemailer'
 import fs from 'fs'
+import path from 'path';
+
 const KEY_GMAIL = process.env.KEY_GMAIL
 const KEY_GUMROAD = process.env.KEY_GUMROAD
 
@@ -11,6 +13,8 @@ const handler = async (m, { args, usedPrefix, command, isAdmin }) => {
         // Substitua com sua chave API do Gumroad no arquivo .env na raiz
         const API_KEY = KEY_GUMROAD;
         const __dirname = global.__dirname()
+
+        const dirPath = path.join(__dirname, '/src/tmplicense');
 
         // Função de consulta ao gumroad 
         async function fetchSales() {
@@ -31,9 +35,9 @@ const handler = async (m, { args, usedPrefix, command, isAdmin }) => {
 
 
                 // Checar se o usuario que esta mandando mensagem, ja solicitou o codigo e estamos aguardando a verificação
-                const check_solicitação = fs.existsSync(__dirname + `/src/tmplicense/${m.sender}.json`)
+                const check_solicitação = fs.existsSync(dirPath + `/${m.sender}.json`)
                 if (check_solicitação === true) {
-                    let dadostmp = JSON.parse(fs.readFileSync(__dirname + `/src/tmplicense/${m.sender}.json`))
+                    let dadostmp = JSON.parse(fs.readFileSync(dirPath + `/${m.sender}.json`))
 
                     async function verifyCode(inputCode, actualCode) {
                         if (inputCode === actualCode) {
@@ -53,10 +57,10 @@ const handler = async (m, { args, usedPrefix, command, isAdmin }) => {
                              
                              // Adiciona uma nova tentativa ao arquivo temp
                              dadostmp.tentativas += 1
-                             fs.writeFileSync(__dirname + `/src/tmplicense/${m.sender}.json`, JSON.stringify(dadostmp))
+                             fs.writeFileSync(dirPath + `/${m.sender}.json`, JSON.stringify(dadostmp))
                              
                              if(dadostmp.tentativas === 3){
-                                return fs.unlink(__dirname + `/src/tmplicense/${m.sender}.json`, (error) => {
+                                return fs.unlink(dirPath + `/${m.sender}.json`, (error) => {
                                     if (error) {
                                         console.log(`Houve um erro, ao deletar o arquivo temporario do ${m.sender}`)
                                     }
@@ -177,10 +181,10 @@ const handler = async (m, { args, usedPrefix, command, isAdmin }) => {
 
 
                     // Gera arquivo temporario com o codigo enviado no E-mail do usuario por 30 segundo
-                    fs.writeFileSync(__dirname + `/src/tmplicense/${m.sender}.json`, JSON.stringify(objeto))
+                    fs.writeFileSync(dirPath + `/${m.sender}.json`, JSON.stringify(objeto))
 
 
-                    let dadostmp = JSON.parse(fs.readFileSync(__dirname + `/src/tmplicense/${m.sender}.json`))
+                    let dadostmp = JSON.parse(fs.readFileSync(dirPath + `/${m.sender}.json`))
 
                     // Tempo para validação do codigo. so entra neste time se o status no arquivo temporario estiver null caso contrario vai ignorar o arquivo.
                     if (dadostmp.status === null) { // caso contrario o arquivo sera apagado...
@@ -191,14 +195,14 @@ const handler = async (m, { args, usedPrefix, command, isAdmin }) => {
                         // Função que aguarda 60s e deleta o arquivo temporario
                         setTimeout(() => {
 
-                            let dadostmp = JSON.parse(fs.readFileSync(__dirname + `/src/tmplicense/${m.sender}.json`))
+                            let dadostmp = JSON.parse(fs.readFileSync(dirPath + `/${m.sender}.json`))
                             dadostmp.status = true // inidica aguardadndo enviar o codigo de ativação
 
-                            fs.writeFileSync(__dirname + `/src/tmplicense/${m.sender}.json`, JSON.stringify(dadostmp))
+                            fs.writeFileSync(dirPath + `/${m.sender}.json`, JSON.stringify(dadostmp))
 
                             // Se o usuario ja confirmou a licença ele apenas ira retornou um log
                             if (global.db.data.users[m.sender].license.status === true) return console.log(`Licença Ativada para ${m.sender}`)
-                            fs.unlink(__dirname + `/src/tmplicense/${m.sender}.json`, (error) => {
+                            fs.unlink(dirPath + `/${m.sender}.json`, (error) => {
                                 if (error) {
                                     console.log(`Houve um erro, ao deletar o arquivo temporario do ${m.sender}`)
                                 }
