@@ -55,6 +55,8 @@ ${tradutor.texto1[9]} ${user.premiumTime > 0 ? '✅' : (isPrems ? '✅' : '❌')
   ╭───── • ◆ • ─────╮ 
   ├❧ _${usedPrefix}menuaudios_
   ├❧ _${usedPrefix}menuanimes_
+  ├❧ _${usedPrefix}license_
+  ├❧ _${usedPrefix}ativar_
   ├❧ _${usedPrefix}labiblia_
   ├❧ _${usedPrefix}lang_ 
   ├❧ _${usedPrefix}langgroup_ 
@@ -87,7 +89,6 @@ ${tradutor.texto1[9]} ${user.premiumTime > 0 ? '✅' : (isPrems ? '✅' : '❌')
   ├❧ _${usedPrefix}token_
   ├❧ _${usedPrefix}stop_
   ├❧ _${usedPrefix}bots_
-  ├❧
   ├❧ _${usedPrefix}enable restrict_
   ├❧ _${usedPrefix}disable restrict_
   ├❧ _${usedPrefix}enable autoread_
