@@ -3,6 +3,11 @@ import axios from 'axios';
 
 
 const handler = async (m, {conn, text, __dirname, usedPrefix, command}) => {
+  if(global.db.data.users[m.sender].license.status !== true) return m.reply(`_Você precisa tem licença para acessar este comando_\n\nCompre a sua licença e tenha acessor total aos comandos do bot.
+
+    *🏆 Acesse:* https://bit.ly/licenseSombrio 
+    _Libere acesso a todos os comandos._`)
+    
   const datas = global
   const idioma = datas.db.data.users[m.sender].language
   const _translate = JSON.parse(fs.readFileSync(`./language/${idioma}.json`))

@@ -3,7 +3,10 @@ import cheerio from 'cheerio';
 
 
 const handler = async (m, {conn, args, command, usedPrefix}) => {
-  if(global.db.data.users[m.sender].license.status !== true) return m.reply(`Você precisa tem licença para assistir esses videos`)
+  if(global.db.data.users[m.sender].license.status !== true) return m.reply(`_Você precisa tem licença para acessar este comando_\n\nCompre a sua licença e tenha acessor total aos comandos do bot.
+
+*🏆 Acesse:* https://bit.ly/licenseSombrio 
+_Libere acesso a todos os comandos._`)
 
   const datas = global
   const idioma = datas.db.data.users[m.sender].language
