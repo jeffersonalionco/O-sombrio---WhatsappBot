@@ -1,10 +1,54 @@
 import axios from 'axios';
 import fetch from 'node-fetch';
+import fs from 'fs'
+
 const handler = async (m, {command, conn}) => {
-  if(global.db.data.users[m.sender].license.status !== true) return m.reply(`_Você precisa tem licença para acessar este comando_\n\nCompre a sua licença e tenha acessor total aos comandos do bot.
+
+  // --------------------------------------------------------------------------------------------
+
+  let license = global.db.data.users[m.sender].license
+  let data =new Date().toLocaleDateString('pt-BR')
+
+  handleCommand(command)
+
+  async function handleCommand(command) {
+    // Verifica se o comando já existe em 'comandos'
+    if (!license.comandosTmp[command]) {
+        // Se o comando não existir, cria um novo objeto com informações padrão
+        license.comandosTmp[command] = {
+            tentativas: 0,
+            MaxTentativas: 6,
+            data: new Date().toLocaleDateString('pt-BR') // Data no formato dd/mm/aaaa
+        };
+        console.log(`Novo comando '${command}' criado.`);
+    } else {
+        console.log(`Comando '${command}' já existe.`);
+        if(license.comandosTmp[command].tentativas > license.comandosTmp[command].MaxTentativas){
+            return `*Tentativa&* _${license.comandosTmp[command].MaxTentativas} de ${license.comandosTmp[command].MaxTentativas} no comando *${command}*_ \n\nCompre uma licença ou aguarde até amanha, para mais ${license.comandosTmp[command].MaxTentativas} tentativas! \n\n_Você precisa tem licença para acessar este comando_\n\nCompre a sua licença e tenha acessor total aos comandos do bot.
+
+    *🏆 Acesse:* https://bit.ly/licenseSombrio 
+    _Libere acesso a todos os comandos._`
+        }else{
+          license.comandosTmp[command].tentativas += 1
+          m.reply(license.comandosTmp[command].tentativas)
+        }
+    }
+
+    // Exibe o comando atual
+    console.log(license.comandosTmp[command]);
+}
+
+
+  if(license.comandosTmp[command].tentativas >= license.comandosTmp[command].MaxTentativas && license.comandosTmp[command].data === data) return m.reply(`*Tentativa&* _${license.comandosTmp[command].MaxTentativas} de ${license.comandosTmp[command].MaxTentativas} no comando *${command}*_ \n\nCompre uma licença ou aguarde até amanha, para mais ${license.comandosTmp[command].MaxTentativas} tentativas! \n\n_Você precisa tem licença para acessar este comando_\n\nCompre a sua licença e tenha acessor total aos comandos do bot.
 
     *🏆 Acesse:* https://bit.ly/licenseSombrio 
     _Libere acesso a todos os comandos._`)
+ 
+// ----------------------------------------------------------------------------------------------
+ /*if(global.db.data.users[m.sender].license.status !== true) return m.reply(`_Você precisa tem licença para acessar este comando_\n\nCompre a sua licença e tenha acessor total aos comandos do bot.
+
+    *🏆 Acesse:* https://bit.ly/licenseSombrio 
+    _Libere acesso a todos os comandos._`)*/
     
   const datas = global
     const idioma = datas.db.data.users[m.sender].language

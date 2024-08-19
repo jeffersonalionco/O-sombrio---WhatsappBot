@@ -947,14 +947,17 @@ export async function handler(chatUpdate) {
       }
       if (license) {
         if (!('email' in license)) license.email = null;
-        if (!('status' in license)) license.status = false
-        if (!('telefone' in license)) license.telefone = null
+        if (!('status' in license)) license.status = false;
+        if (!('telefone' in license)) license.telefone = null;
+        if (!('comandosTmp' in license)) license.comandosTmp = {}
+
 
       } else {
         global.db.data.users[m.sender].license = {
           email: null,
           status: false,
-          telefone: null
+          telefone: null,
+          comandosTmp: {}
         }
       }
       const gameglx = global.db.data.users[m.sender].gameglx
