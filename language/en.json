@@ -9,6 +9,10 @@
             "texto2": "_*< ANTI-ARABS />*_\n\n*[ ℹ️ ] In this group, numbers starting with +265 are not allowed. Therefore, you will be removed from the group.*",
             "texto3": "_*< ANTI-ARABS />*_\n\n*[ ℹ️ ] In this group, numbers starting with +92 are not allowed. Therefore, you will be removed from the group.*"
         },
+        "verificationLicense": {
+        "texto2": "\n  *Attempt* _{{tentativas}} out of {{MaxTentativas}}_\n\n  _You have exhausted your attempts today, on {{data}}! Buy a license or wait until tomorrow. {{dataAmanha}}_\n    *🏆 Access:* https://bit.ly/licenseSombrio",
+        "texto3": "*Attempt* _{{tentativas}} out of {{MaxTentativas}} for the command *{{command}}*_ \n\nBuy a license or wait until tomorrow for more {{MaxTentativas}} attempts! \n\n_You need a license to access this command._\n\nBuy your license and get full access to all bot commands.\n\n    *🏆 Access:* https://bit.ly/licenseSombrio \n    _Unlock access to all commands._"
+    },
         "_antilink": {
             "texto1": "*< ANTI-LINK />*_\n\n*[ ℹ️ ] Antilink is enabled, but the participant who sent the link is an administrator.*",
             "texto2": "_*< ANTI-LINK />*_\n\n*[ ℹ️ ] Participant @user sent a link to a WhatsApp group, so they will be removed.*",
@@ -3776,6 +3780,11 @@
         "adult_comandos": {
             "texto1": "[❗INFORMATION❗] THE +18 COMMANDS ARE DISABLED IN THE GROUP, IF YOU ARE AN ADMIN AND WANT TO ACTIVATE THEM USE THE #enable modohorny COMMAND"
         },
+        "adult_comandos_18": {
+    "texto1": "\n  *Attempt* _${license.comandosTmp[command].MaxTentativas} out of ${license.comandosTmp[command].MaxTentativas}_\n\n  _You’ve used up your attempts for today, ${data}! Buy a license or wait until tomorrow. ${dataAmanha}_\n    *🏆 Access:* https://bit.ly/licenseSombrio",
+    "texto2": "*Attempt* _${license.comandosTmp[command].MaxTentativas} out of ${license.comandosTmp[command].MaxTentativas} for the command *${command}*_ \n\nBuy a license or wait until tomorrow for more ${license.comandosTmp[command].MaxTentativas} attempts! \n\n_You need a license to access this command._\n\nBuy your license and get full access to the bot's commands.\n\n    *🏆 Access:* https://bit.ly/licenseSombrio \n    _Unlock access to all commands._"
+}
+,
         "_language": {
             "texto1": [
                 "\n\n_To change the language, send the command with the desired language abbreviation\n\n👉Example:",

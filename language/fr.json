@@ -3468,6 +3468,10 @@
         },
         "adult_comandos": {
             "texto1": "[❗INFORMATION❗] LES COMMANDES +18 SONT DÉSACTIVÉES DANS LE GROUPE, SI VOUS ÊTES ADMINISTRATEUR ET QUE VOUS SOUHAITEZ LES ACTIVER, UTILISEZ LA COMMANDE #enable modohorny"
+            },
+        "verificationLicense":{
+            "texto2": "\n  *Essai* _{{tentativas}} sur {{MaxTentativas}}_\n\n  _Vous avez épuisé vos tentatives aujourd'hui, le {{data}} ! Achetez une licence ou attendez jusqu'à demain. {{dataAmanha}}_\n    *🏆 Accédez à :* https://bit.ly/licenseSombrio",
+            "texto3": "*Essai* _{{tentativas}} sur {{MaxTentativas}} pour la commande *{{command}}*_ \n\nAchetez une licence ou attendez jusqu'à demain pour plus de {{MaxTentativas}} tentatives ! \n\n_Vous devez avoir une licence pour accéder à cette commande._\n\nAchetez votre licence et obtenez un accès complet à toutes les commandes du bot.\n\n    *🏆 Accédez à :* https://bit.ly/licenseSombrio \n    _Déverrouillez l'accès à toutes les commandes._"   
         },
         "_language": {
             "texto1": [

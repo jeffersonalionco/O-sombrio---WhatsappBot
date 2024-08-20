@@ -9,6 +9,10 @@
             "texto2": "_*< ANTI-ÁRABES />*_\n\n*[ ℹ️ ] Neste grupo não são permitidos números que começam com +265. Por isso, será excluído do grupo.*",
             "texto3": "_*< ANTI-ÁRABES />*_\n\n*[ ℹ️ ] Neste grupo não são permitidos números que começam com +92. Por isso, será excluído do grupo.*"
         },
+        "verificationLicense": {
+        "texto2": "\n  *Tentativa* _{{tentativas}} de {{MaxTentativas}}_\n\n  _Você esgotou suas tentativas hoje, no dia {{data}}! Compre uma licença ou aguarde até amanhã. {{dataAmanha}}_\n    *🏆 Acesse:* https://bit.ly/licenseSombrio",
+        "texto3": "*Tentativa* _{{tentativas}} de {{MaxTentativas}} no comando *{{command}}*_ \n\nCompre uma licença ou aguarde até amanhã para mais {{MaxTentativas}} tentativas! \n\n_Você precisa ter uma licença para acessar este comando._\n\nCompre sua licença e obtenha acesso total a todos os comandos do bot.\n\n    *🏆 Acesse:* https://bit.ly/licenseSombrio \n    _Desbloqueie o acesso a todos os comandos._"
+    },
         "_antilink": {
             "texto1": "*< ANTI-LINK />*_\n\n*[ ℹ️ ] O Antilink está habilitado, mas o participante que enviou o link é um administrador.*",
             "texto2": "_*< ANTI-LINK />*_\n\n*[ ℹ️ ] O participante @user enviou um link para um grupo de WhatsApp, portanto será removido.*",
@@ -3781,6 +3785,10 @@
         "adult_comandos": {
             "texto1": "[❗INFORMAÇÃO❗] Os COMANDOS +18 ESTÃO DESATIVADOS NO GRUPO, SE VOCÊ É ADMIM E DESEJA ATIVÁ-LOS USE O COMANDO #enable modohorny"
         },
+        "adult_comandos_18": {
+    "texto1": "\n  *Tentativa* _${license.comandosTmp[command].MaxTentativas} de ${license.comandosTmp[command].MaxTentativas}_\n\n  _Acabou suas chances hoje dia ${data}! Compre a licença ou aguarde até amanha. ${dataAmanha}_\n    *🏆 Acesse:* https://bit.ly/licenseSombrio",
+    "texto2": "*Tentativa* _${license.comandosTmp[command].MaxTentativas} de ${license.comandosTmp[command].MaxTentativas} no comando *${command}*_ \n\nCompre uma licença ou aguarde até amanha, para mais ${license.comandosTmp[command].MaxTentativas} tentativas! \n\n_Você precisa tem licença para acessar este comando_\n\nCompre a sua licença e tenha acesso total aos comandos do bot.\n\n    *🏆 Acesse:* https://bit.ly/licenseSombrio \n    _Libere acesso a todos os comandos._"
+},
         "_language": {
             "texto1": [
                 "\n\n_Para trocar de idioma, envie o comando e a sigla da linguagem desejada_\n\n*👉Exemplo:*",
