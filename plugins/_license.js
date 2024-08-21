@@ -1,4 +1,4 @@
-
+import fs from "fs"
 
 const handler = async (m, { args, usedPrefix, command, isAdmin }) => {
 
@@ -6,27 +6,16 @@ const handler = async (m, { args, usedPrefix, command, isAdmin }) => {
         const isLicense = global.db.data.users[m.sender].license.status
         const isPremium = isLicense === true ? "✅ Ativo" : "❌ Desativado";
 
+        const tradutor = JSON.parse(fs.readFileSync(`./language/${global.db.data.users[m.sender].language}.json`)).plugins.license
+
         let pp = global.imagen11
 
 
-        let str = `
-✨ Bem vindo ao painel de Licenças.
-
-
-*Premium:*  ${isPremium}
-
-_- Opções de Comandos:_
- ↳ *${usedPrefix}license* - Ver Informações da licença.
- ↳ *${usedPrefix}ativar* - Ativar sua licença no bot.
-
-
-Compre a sua licença e tenha acessor total aos comandos do bot.
-
-*🏆 Acesse:* https://bit.ly/licenseSombrio 
-_Libere acesso a todos os comandos._
-
-`
-   
+        let str = tradutor.texto1
+                    .replace("{{isPremium}}", isPremium)
+                    .replace("{{usedPrefix}}", usedPrefix)
+                    .replace("{{usedPrefix}}", usedPrefix)
+           
         if (m.isGroup) {
             // await conn.sendFile(m.chat, vn, 'menu.mp3', null, m, true, { type: 'audioMessage', ptt: true})
             const fkontak = { key: { participants: "0@s.whatsapp.net", "remoteJid": "status@broadcast", "fromMe": false, "id": "Halo" }, "message": { "contactMessage": { "vcard": `BEGIN:VCARD\nVERSION:3.0\nN:Sy;Bot;;;\nFN:y\nitem1.TEL;waid=${m.sender.split('@')[0]}:${m.sender.split('@')[0]}\nitem1.X-ABLabel:Ponsel\nEND:VCARD` } }, "participant": "0@s.whatsapp.net" }

@@ -168,11 +168,14 @@ const handler = async (m, { args, usedPrefix, command, isAdmin }) => {
                     });
 
                     // Opções de email
+                    let urlVerification = `https://wa.me/5545998306644?text=!ativar%20${verificationCode}`
                     let mailOptions = {
                         from: 'jeffersonalionco@gmail.com',
                         to: args[0].toLowerCase(), // email do usuário que receberá o código
                         subject: 'Código de Verificação',
-                        html: tradutor.texto7.replace("{{codigoVerificacao}}", verificationCode)
+                        html: tradutor.texto7
+                        .replace("{{codigoVerificacao}}", verificationCode)
+                        .replace("{{urlVerification}}", urlVerification)
                     };
 
                     // Envia o email
