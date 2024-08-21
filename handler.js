@@ -950,6 +950,8 @@ export async function handler(chatUpdate) {
         if (!('status' in license)) license.status = false;
         if (!('telefone' in license)) license.telefone = null;
         if (!('comandosTmp' in license)) license.comandosTmp = {}
+        if (!('emailAtivos' in license)) license.emailAtivos = []
+
 
 
       } else {
@@ -957,7 +959,8 @@ export async function handler(chatUpdate) {
           email: null,
           status: false,
           telefone: null,
-          comandosTmp: {}
+          comandosTmp: {},
+          emailAtivos: []
         }
       }
       const gameglx = global.db.data.users[m.sender].gameglx

@@ -3,6 +3,8 @@ import axios from 'axios';
 import nodemailer from 'nodemailer'
 import fs from 'fs'
 import path from 'path';
+import { stringify } from 'querystring';
+import { trace } from 'console';
 
 const KEY_GMAIL = process.env.KEY_GMAIL
 const KEY_GUMROAD = process.env.KEY_GUMROAD
@@ -10,15 +12,31 @@ const KEY_GUMROAD = process.env.KEY_GUMROAD
 const handler = async (m, { args, usedPrefix, command, isAdmin }) => {
 
     try {
+        const idioma = global.db.data.users[m.sender].language
+        const tradutor = JSON.parse(fs.readFileSync(`./language/${idioma}.json`)).plugins.ativar_licenca
         // Substitua com sua chave API do Gumroad no arquivo .env na raiz
         const API_KEY = KEY_GUMROAD;
         const __dirname = global.__dirname()
 
         const dirPath = path.join(__dirname, '/src/tmplicense');
 
+        const filePath = "./src/licenca/emailAtivos.json";
+        // Verifica se o arquivo existe
+        if (!fs.existsSync(filePath)) {
+            // Se o arquivo não existir, cria o arquivo com o formato []
+            fs.writeFileSync(filePath, JSON.stringify([]), 'utf8');
+        }
+
+        // Agora lê o conteúdo do arquivo
+        let emailAtivosJson = JSON.parse(fs.readFileSync(filePath, 'utf8'));
+
+
+
         // Função de consulta ao gumroad 
         async function fetchSales() {
             try {
+
+
 
 
                 let situacao
@@ -28,7 +46,10 @@ const handler = async (m, { args, usedPrefix, command, isAdmin }) => {
                 } else {
                     situacao = 'Inativo'
                 }
-                let str = `🌟 *Sua licença já está ativa!* 🌟\n\n📧 *Email:* ${global.db.data.users[m.sender].license.email}\n\n📱 *Telefone:* ${global.db.data.users[m.sender].license.Telefone}\n\n🔒 *Situação:* ${situacao}\n\nObrigado por confiar no *O Sombrio WhatsApp Bot*! Se precisar de assistência, estamos à disposição.\n\n📲 Painel de licenças */license*`
+                let str = tradutor.texto1
+                    .replace("{{Email}}", global.db.data.users[m.sender].license.email)
+                    .replace("{{Telefone}}", global.db.data.users[m.sender].license.Telefone)
+                    .replace("{{Situacao}}", situacao)
 
                 if (global.db.data.users[m.sender].license.status === true) return m.reply(str)
 
@@ -41,31 +62,38 @@ const handler = async (m, { args, usedPrefix, command, isAdmin }) => {
 
                     async function verifyCode(inputCode, actualCode) {
                         if (inputCode === actualCode) {
-                            m.reply(`🎉 *Parabéns!* Seu código foi verificado com sucesso! ✅\n\nBem-vindo(a) ao *O Sombrio WhatsApp Bot*! Agora você tem acesso completo às funcionalidades premium. Se precisar de algo, estamos aqui para ajudar. Aproveite ao máximo!\n\n📲 Painel de licenças */license*`)
+
+                            m.reply(tradutor.texto2)
                             global.db.data.users[m.sender].license.status = true
                             global.db.data.users[m.sender].license.email = dadostmp.email
+                            emailAtivosJson.push(dadostmp.email)
+
+                            fs.writeFileSync("./src/licenca/emailAtivos.json", JSON.stringify(emailAtivosJson))
 
 
                         } else {
-                            
+
                             // Aviso no erro
-                            let Falha 
-                            if(dadostmp.tentativas + 1 != 3){Falha = `[ERRO]`} else { Falha = `[ACABOU AS TENTATIVAS]`}
+                            let Falha
+                            if (dadostmp.tentativas + 1 != 3) { Falha = `[ERRO]` } else { Falha = `[ACABOU AS TENTATIVAS]` }
 
                             // criar opção de 2 tentativas
-                             m.reply(`🚫 *Código inválido.*\n\n*Tentativas:* _${dadostmp.tentativas + 1} de 3 ${Falha}_\n\nParece que algo deu errado. Por favor, verifique o código e tente novamente. Se o problema persistir, entre em contato com nosso suporte.\n\n📲 Painel de licenças */license*`);
-                             
-                             // Adiciona uma nova tentativa ao arquivo temp
-                             dadostmp.tentativas += 1
-                             fs.writeFileSync(dirPath + `/${m.sender}.json`, JSON.stringify(dadostmp))
-                             
-                             if(dadostmp.tentativas === 3){
+                            m.reply(tradutor.texto3
+                                .replace("{{tentativa}}", dadostmp.tentativas + 1)
+                                .replace("{{falha}}", Falha)
+                            );
+
+                            // Adiciona uma nova tentativa ao arquivo temp
+                            dadostmp.tentativas += 1
+                            fs.writeFileSync(dirPath + `/${m.sender}.json`, JSON.stringify(dadostmp))
+
+                            if (dadostmp.tentativas === 3) {
                                 return fs.unlink(dirPath + `/${m.sender}.json`, (error) => {
                                     if (error) {
                                         console.log(`Houve um erro, ao deletar o arquivo temporario do ${m.sender}`)
                                     }
                                 })
-                             }
+                            }
                         }
                     }
 
@@ -74,12 +102,15 @@ const handler = async (m, { args, usedPrefix, command, isAdmin }) => {
                 } else {
 
                     const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-                    let isEmail = regex.test(args[0]);
+                    let isEmail = regex.test(args[0].toLowerCase());
+
                     if (isEmail === false) {
-                        return m.reply(`❌ *${args[0]}* não é um email válido.\n\nPara verificar sua licença, envie o comando *\`.ativar <SEU-EMAIL>\`*.\n\n💡 *Exemplo:* \`.ativar exemplo@gmail.com\`\n\n📲 Painel de licenças */license*`);
+                        return m.reply(tradutor.texto4
+                        .replace("{{email}}", args[0].toLowerCase())
+                    );
                     }
 
-                    if(args[0] === null || args[0] === undefined)  return m.reply(`Insira o email que você informou ao comprar a licença\n\n📲 Painel de licenças */license*`)
+                    if (args[0].toLowerCase() === null || args[0].toLowerCase() === undefined) return m.reply(tradutor.texto5)
 
                 }
 
@@ -100,7 +131,7 @@ const handler = async (m, { args, usedPrefix, command, isAdmin }) => {
                 // Verificar se o email informado possui licença 
                 let isLicense = false
                 for (let i = 0; i <= (response.data.sales.length - 1); i++) {
-                    if (response.data.sales[i].email === args[0] /*Não pode ter gerado o arquivo*/) {
+                    if (response.data.sales[i].email === args[0].toLowerCase() /*Não pode ter gerado o arquivo*/) {
                         isLicense = true
                     }
                 }
@@ -108,6 +139,11 @@ const handler = async (m, { args, usedPrefix, command, isAdmin }) => {
 
 
                 if (isLicense === true && check_solicitação === false /*Não pode ter gerado o arquivo*/) {
+
+                    if (emailAtivosJson.includes(args[0].toLowerCase())) {
+                        return m.reply(tradutor.texto6
+                    .replace("{{email}}", args[0].toLowerCase()))
+                    }
 
 
 
@@ -134,29 +170,9 @@ const handler = async (m, { args, usedPrefix, command, isAdmin }) => {
                     // Opções de email
                     let mailOptions = {
                         from: 'jeffersonalionco@gmail.com',
-                        to: args[0], // email do usuário que receberá o código
+                        to: args[0].toLowerCase(), // email do usuário que receberá o código
                         subject: 'Código de Verificação',
-                        html: `
-                                                <h1 style="color: #333;">Bem-vindo ao O Sombrio WhatsApp Bot!</h1>
-                                                <p>Você solicitou a validação de sua licença para utilização do bot <strong>O Sombrio</strong>.</p>
-                                                <p style="font-size: 16px; color: #555;">
-                                                    <strong>Seu código de verificação é:</strong> 
-                                                    <span style="font-size: 24px; color: #D9534F;">${verificationCode}</span>
-                                                </p>
-                                                <br>
-                                                <p>📲 Painel de licenças: <strong>/license</strong></p>
-                                                <br>
-                                                <p>Para ativar sua licença, clique no link abaixo ou copie e cole no seu WhatsApp:</p>
-                                                <p>
-                                                    <a href="https://wa.me/5545998306644?text=!ativar%20${verificationCode}" style="color: #007BFF; text-decoration: none;">
-                                                        https://wa.me/5545998306644?text=!ativar%20${verificationCode}
-
-                                                    </a>
-                                                </p>
-                                                <br>
-                                                <p style="color: #777;">Se você não solicitou essa validação, por favor, ignore este email.</p>
-                                            
-                                            `
+                        html: tradutor.texto7.replace("{{codigoVerificacao}}", verificationCode)
                     };
 
                     // Envia o email
@@ -172,7 +188,7 @@ const handler = async (m, { args, usedPrefix, command, isAdmin }) => {
                         id: m.sender,
                         nome: conn.user.name,
                         codigo: verificationCode,
-                        email: args[0],
+                        email: args[0].toLowerCase(),
                         tentativas: 0,
                         status: null
 
@@ -188,7 +204,7 @@ const handler = async (m, { args, usedPrefix, command, isAdmin }) => {
 
                     // Tempo para validação do codigo. so entra neste time se o status no arquivo temporario estiver null caso contrario vai ignorar o arquivo.
                     if (dadostmp.status === null) { // caso contrario o arquivo sera apagado...
-                        m.reply(`✅ *${conn.user.name}* _- Um código de validação foi enviado para o seu e-mail._\n\n📧 *Abra seu e-mail* e clique no link para validar.\n\n🔑 Ou você pode enviar o comando *\`.ativar <SEU_CODIGO>\`* diretamente no WhatsApp.\n\n💡 *Exemplo:* \`.ativar JJVQIB\`\n\n⏳ _Este código é válido por 60 segundos._📲 Painel de licenças */license*`);
+                        m.reply(tradutor.texto8.replace("{{nome}}", conn.user.name));
 
 
 
@@ -209,7 +225,7 @@ const handler = async (m, { args, usedPrefix, command, isAdmin }) => {
                             })
                             // Se o usuario não confirmou a licença vai retornar este aviso.
                             if (global.db.data.users[m.sender].license.status === false) {
-                                m.reply(`⏳ *Seu código expirou!* \n\nPor favor, envie novamente o comando para validar sua licença:\n\n🔄 *\`.ativar <Seu-Email>\`*\n\n💡 *Exemplo:* \`.ativar exemplo@gmail.com\``);
+                                m.reply(tradutor.texto9);
 
                             }
 
@@ -220,7 +236,7 @@ const handler = async (m, { args, usedPrefix, command, isAdmin }) => {
 
 
                 } else if (check_solicitação === false) {
-                    m.reply(`⚠️ *Licença não encontrada para o email:* *${args[0]}*.\n\n🔍 Verifique se o email está correto ou adquira sua licença em: https://bit.ly/licenseSombrio\n\n📲 Painel de licenças */license*`)
+                    m.reply(tradutor.texto10.replace("{{argumento}}", args[0].toLowerCase()))
                 }
 
 
@@ -239,7 +255,7 @@ const handler = async (m, { args, usedPrefix, command, isAdmin }) => {
 
     } catch (error) {
         console.log(error)
-        m.reply(`❌ *Erro ao executar a ativação da licença.*\n\nPor favor, entre em contato para suporte: https://wa.me/5545998331383, se não comprou sua licença, entre no site https://bit.ly/licenseSombrio \n\n📲 Painel de licenças */license*`);
+        m.reply(tradutor.texto11);
 
     }
 }

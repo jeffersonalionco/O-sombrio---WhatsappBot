@@ -10,9 +10,22 @@
             "texto3": "_*< ANTI-ÁRABES />*_\n\n*[ ℹ️ ] Neste grupo não são permitidos números que começam com +92. Por isso, será excluído do grupo.*"
         },
         "verificationLicense": {
-        "texto2": "\n  *Tentativa* _{{tentativas}} de {{MaxTentativas}}_\n\n  _Você esgotou suas tentativas hoje, no dia {{data}}! Compre uma licença ou aguarde até amanhã. {{dataAmanha}}_\n    *🏆 Acesse:* https://bit.ly/licenseSombrio",
-        "texto3": "*Tentativa* _{{tentativas}} de {{MaxTentativas}} no comando *{{command}}*_ \n\nCompre uma licença ou aguarde até amanhã para mais {{MaxTentativas}} tentativas! \n\n_Você precisa ter uma licença para acessar este comando._\n\nCompre sua licença e obtenha acesso total a todos os comandos do bot.\n\n    *🏆 Acesse:* https://bit.ly/licenseSombrio \n    _Desbloqueie o acesso a todos os comandos._"
-    },
+            "texto2": "\n  *Tentativa* _{{tentativas}} de {{MaxTentativas}}_\n\n  _Você esgotou suas tentativas hoje, no dia {{data}}! Compre uma licença ou aguarde até amanhã. {{dataAmanha}}_\n    *🏆 Acesse:* https://bit.ly/licenseSombrio",
+            "texto3": "*Tentativa* _{{tentativas}} de {{MaxTentativas}} no comando *{{command}}*_ \n\nCompre uma licença ou aguarde até amanhã para mais {{MaxTentativas}} tentativas! \n\n_Você precisa ter uma licença para acessar este comando._\n\nCompre sua licença e obtenha acesso total a todos os comandos do bot.\n\n    *🏆 Acesse:* https://bit.ly/licenseSombrio \n    _Desbloqueie o acesso a todos os comandos._"
+        },
+        "ativar_licenca": {
+            "texto1": "🌟 *Sua licença já está ativa!* 🌟\n\n📧 *Email:* {{Email}}\n\n📱 *Telefone:* {{Telefone}}\n\n🔒 *Situação:* {{Situacao}}\n\nObrigado por confiar no *O Sombrio WhatsApp Bot*! Se precisar de assistência, estamos à disposição.\n\n📲 Painel de licenças */license*",
+            "texto2": "🎉 *Parabéns!* Seu código foi verificado com sucesso! ✅\n\nBem-vindo(a) ao *O Sombrio WhatsApp Bot*! Agora você tem acesso completo às funcionalidades premium. Se precisar de algo, estamos aqui para ajudar. Aproveite ao máximo!\n\n📲 Painel de licenças */license*",
+            "texto3": "🚫 *Código inválido.*\n\n*Tentativas:* _{{tentativa}} de {{falha}}_\n\nParece que algo deu errado. Por favor, verifique o código e tente novamente. Se o problema persistir, entre em contato com nosso suporte.\n\n📲 Painel de licenças */license*",
+            "texto4": "❌ *{{email}}* não é um email válido.\n\nPara verificar sua licença, envie o comando *\\`.ativar <SEU-EMAIL>\\`*.\n\n💡 *Exemplo:* \\`.ativar exemplo@gmail.com\\`\n\n📲 Painel de licenças */license*",
+            "texto5": "Insira o email que você informou ao comprar a licença\n\n📲 Painel de licenças */license*",
+            "texto6": "🚫 *Este e-mail {{email}}, já esta ativo",
+            "texto7": "<h1 style=\"color: #333;\">Bem-vindo ao O Sombrio WhatsApp Bot!</h1><p>Você solicitou a validação de sua licença para utilização do bot <strong>O Sombrio</strong>.</p><p style=\"font-size: 16px; color: #555;\"><strong>Seu código de verificação é:</strong> <span style=\"font-size: 24px; color: #D9534F;\">{{codigoVerificacao}}</span></p><br><p>📲 Painel de licenças: <strong>/license</strong></p><br><p>Para ativar sua licença, clique no link abaixo ou copie e cole no seu WhatsApp:</p><p><a href=\"https://wa.me/5545998306644?text=!ativar%20{{codigoVerificacao}}\" style=\"color: #007BFF; text-decoration: none;\">https://wa.me/5545998306644?text=!ativar%20{{codigoVerificacao}}</a></p><br><p style=\"color: #777;\">Se você não solicitou essa validação, por favor, ignore este email.</p>",
+            "texto8": "✅ *{{nome}}* _- Um código de validação foi enviado para o seu e-mail._\n\n📧 *Abra seu e-mail* e clique no link para validar.\n\n🔑 Ou você pode enviar o comando *\\`.ativar <SEU_CODIGO>\\`* diretamente no WhatsApp.\n\n💡 *Exemplo:* \\`.ativar JJVQIB\\`\n\n⏳ _Este código é válido por 60 segundos._📲 Painel de licenças */license*",
+            "texto9": "⏳ *Seu código expirou!* \n\nPor favor, envie novamente o comando para validar sua licença:\n\n🔄 *\\`.ativar <Seu-Email>\\`*\n\n💡 *Exemplo:* \\`.ativar exemplo@gmail.com\\`",
+            "texto10": "⚠️ *Licença não encontrada para o email:* {{argumento}}*.\n\n🔍 Verifique se o email está correto ou adquira sua licença em: https://bit.ly/licenseSombrio\n\n📲 Painel de licenças */license*",
+            "texto11": "❌ *Erro ao executar a ativação da licença.*\n\nPor favor, entre em contato para suporte: https://wa.me/5545998331383, se não comprou sua licença, entre no site https://bit.ly/licenseSombrio \n\n📲 Painel de licenças */license*"
+        },
         "_antilink": {
             "texto1": "*< ANTI-LINK />*_\n\n*[ ℹ️ ] O Antilink está habilitado, mas o participante que enviou o link é um administrador.*",
             "texto2": "_*< ANTI-LINK />*_\n\n*[ ℹ️ ] O participante @user enviou um link para um grupo de WhatsApp, portanto será removido.*",
@@ -2928,7 +2941,7 @@
             "texto2": "_< Opções idioma 🌎 >_ ",
             "texto3": "_< Idioma de Grupos >_",
             "texto4": " *_🚀Novo Jogo RPG, para mineração_*",
-            "texto5" : "Faça uma doação",
+            "texto5": "Faça uma doação",
             "texto6": "Isso vai mater o servidor ativo."
         },
         "mipilot_serbot_broadcast": {
@@ -3786,9 +3799,9 @@
             "texto1": "[❗INFORMAÇÃO❗] Os COMANDOS +18 ESTÃO DESATIVADOS NO GRUPO, SE VOCÊ É ADMIM E DESEJA ATIVÁ-LOS USE O COMANDO #enable modohorny"
         },
         "adult_comandos_18": {
-    "texto1": "\n  *Tentativa* _${license.comandosTmp[command].MaxTentativas} de ${license.comandosTmp[command].MaxTentativas}_\n\n  _Acabou suas chances hoje dia ${data}! Compre a licença ou aguarde até amanha. ${dataAmanha}_\n    *🏆 Acesse:* https://bit.ly/licenseSombrio",
-    "texto2": "*Tentativa* _${license.comandosTmp[command].MaxTentativas} de ${license.comandosTmp[command].MaxTentativas} no comando *${command}*_ \n\nCompre uma licença ou aguarde até amanha, para mais ${license.comandosTmp[command].MaxTentativas} tentativas! \n\n_Você precisa tem licença para acessar este comando_\n\nCompre a sua licença e tenha acesso total aos comandos do bot.\n\n    *🏆 Acesse:* https://bit.ly/licenseSombrio \n    _Libere acesso a todos os comandos._"
-},
+            "texto1": "\n  *Tentativa* _${license.comandosTmp[command].MaxTentativas} de ${license.comandosTmp[command].MaxTentativas}_\n\n  _Acabou suas chances hoje dia ${data}! Compre a licença ou aguarde até amanha. ${dataAmanha}_\n    *🏆 Acesse:* https://bit.ly/licenseSombrio",
+            "texto2": "*Tentativa* _${license.comandosTmp[command].MaxTentativas} de ${license.comandosTmp[command].MaxTentativas} no comando *${command}*_ \n\nCompre uma licença ou aguarde até amanha, para mais ${license.comandosTmp[command].MaxTentativas} tentativas! \n\n_Você precisa tem licença para acessar este comando_\n\nCompre a sua licença e tenha acesso total aos comandos do bot.\n\n    *🏆 Acesse:* https://bit.ly/licenseSombrio \n    _Libere acesso a todos os comandos._"
+        },
         "_language": {
             "texto1": [
                 "\n\n_Para trocar de idioma, envie o comando e a sigla da linguagem desejada_\n\n*👉Exemplo:*",
@@ -3839,8 +3852,8 @@
                 "*🪐Seu Planeta: "
             ]
         },
-        "doar":{
-            "texto1":[
+        "doar": {
+            "texto1": [
                 "🤩 *Colabore,* _é com sua ajuda que este sistema continua funcionando._ \n\n🌟Deseja fazer sua doação pelo cartão de crédito:\n*R$15.00* -",
                 "_Este link foi gerado pelo bot_ Conclua sua doação no site.\n\n*+ PayPal:* Jeffersonalionco@gmail.com",
                 "*+ Mercado pago:*\nhttps://link.mercadopago.com.br/jeffersonalionco\n\n _Seu nome aparecera Aqui:_ \n1- Mateus Scarpa R$30.00"

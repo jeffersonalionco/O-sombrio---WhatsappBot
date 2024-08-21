@@ -3468,10 +3468,23 @@
         },
         "adult_comandos": {
             "texto1": "[❗INFORMATION❗] LES COMMANDES +18 SONT DÉSACTIVÉES DANS LE GROUPE, SI VOUS ÊTES ADMINISTRATEUR ET QUE VOUS SOUHAITEZ LES ACTIVER, UTILISEZ LA COMMANDE #enable modohorny"
-            },
-        "verificationLicense":{
+        },
+        "verificationLicense": {
             "texto2": "\n  *Essai* _{{tentativas}} sur {{MaxTentativas}}_\n\n  _Vous avez épuisé vos tentatives aujourd'hui, le {{data}} ! Achetez une licence ou attendez jusqu'à demain. {{dataAmanha}}_\n    *🏆 Accédez à :* https://bit.ly/licenseSombrio",
-            "texto3": "*Essai* _{{tentativas}} sur {{MaxTentativas}} pour la commande *{{command}}*_ \n\nAchetez une licence ou attendez jusqu'à demain pour plus de {{MaxTentativas}} tentatives ! \n\n_Vous devez avoir une licence pour accéder à cette commande._\n\nAchetez votre licence et obtenez un accès complet à toutes les commandes du bot.\n\n    *🏆 Accédez à :* https://bit.ly/licenseSombrio \n    _Déverrouillez l'accès à toutes les commandes._"   
+            "texto3": "*Essai* _{{tentativas}} sur {{MaxTentativas}} pour la commande *{{command}}*_ \n\nAchetez une licence ou attendez jusqu'à demain pour plus de {{MaxTentativas}} tentatives ! \n\n_Vous devez avoir une licence pour accéder à cette commande._\n\nAchetez votre licence et obtenez un accès complet à toutes les commandes du bot.\n\n    *🏆 Accédez à :* https://bit.ly/licenseSombrio \n    _Déverrouillez l'accès à toutes les commandes._"
+        },
+        "ativar_licenca": {
+            "texto1": "🌟 *Votre licence est déjà activée !* 🌟\n\n📧 *Email:* {{Email}}\n\n📱 *Téléphone:* {{Telefone}}\n\n🔒 *Statut:* {{Situacao}}\n\nMerci de faire confiance à *O Sombrio WhatsApp Bot*! Si vous avez besoin d'aide, nous sommes là pour vous.\n\n📲 Panneau des licences */license*",
+            "texto2": "🎉 *Félicitations !* Votre code a été vérifié avec succès ! ✅\n\nBienvenue sur *O Sombrio WhatsApp Bot*! Vous avez maintenant accès complet aux fonctionnalités premium. Si vous avez besoin de quelque chose, nous sommes là pour vous aider. Profitez-en !\n\n📲 Panneau des licences */license*",
+            "texto3": "🚫 *Code invalide.*\n\n*Tentatives:* _{{tentativa}} sur {{falha}}_\n\nIl semble qu'il y ait eu un problème. Veuillez vérifier le code et réessayer. Si le problème persiste, contactez notre support.\n\n📲 Panneau des licences */license*",
+            "texto4": "❌ *{{email}}* n'est pas un email valide.\n\nPour vérifier votre licence, envoyez la commande *\\`.activer <VOTRE-EMAIL>\\`*.\n\n💡 *Exemple:* \\`.activer example@gmail.com\\`\n\n📲 Panneau des licences */license*",
+            "texto5": "Entrez l'email que vous avez fourni lors de l'achat de la licence\n\n📲 Panneau des licences */license*",
+            "texto6": "🚫 *Cet email {{email}} est déjà actif*",
+            "texto7": "<h1 style=\"color: #333;\">Bienvenue sur O Sombrio WhatsApp Bot !</h1><p>Vous avez demandé la validation de votre licence pour utiliser le bot <strong>O Sombrio</strong>.</p><p style=\"font-size: 16px; color: #555;\"><strong>Votre code de validation est :</strong> <span style=\"font-size: 24px; color: #D9534F;\">{{codigoVerificacao}}</span></p><br><p>📲 Panneau des licences : <strong>/license</strong></p><br><p>Pour activer votre licence, cliquez sur le lien ci-dessous ou copiez et collez-le dans votre WhatsApp :</p><p><a href=\"https://wa.me/5545998306644?text=!activer%20{{codigoVerificacao}}\" style=\"color: #007BFF; text-decoration: none;\">https://wa.me/5545998306644?text=!activer%20{{codigoVerificacao}}</a></p><br><p style=\"color: #777;\">Si vous n'avez pas demandé cette validation, veuillez ignorer cet email.</p>",
+            "texto8": "✅ *{{nome}}* _- Un code de validation a été envoyé à votre email._\n\n📧 *Ouvrez votre email* et cliquez sur le lien pour valider.\n\n🔑 Vous pouvez aussi envoyer la commande *\\`.activer <VOTRE_CODE>\\`* directement dans WhatsApp.\n\n💡 *Exemple:* \\`.activer JJVQIB\\`\n\n⏳ _Ce code est valide pendant 60 secondes._📲 Panneau des licences */license*",
+            "texto9": "⏳ *Votre code a expiré !* \n\nVeuillez renvoyer la commande pour valider votre licence :\n\n🔄 *\\`.activer <Votre-Email>\\`*\n\n💡 *Exemple:* \\`.activer example@gmail.com\\`",
+            "texto10": "⚠️ *Licence non trouvée pour l'email :* {{argumento}}*.\n\n🔍 Vérifiez si l'email est correct ou obtenez votre licence sur : https://bit.ly/licenseSombrio\n\n📲 Panneau des licences */license*",
+            "texto11": "❌ *Erreur lors de l'activation de la licence.*\n\nVeuillez contacter le support à : https://wa.me/5545998331383. Si vous n'avez pas acheté votre licence, visitez https://bit.ly/licenseSombrio \n\n📲 Panneau des licences */license*"
         },
         "_language": {
             "texto1": [

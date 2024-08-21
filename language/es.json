@@ -13,6 +13,19 @@
             "texto2": "\n  *Intento* _{{tentativas}} de {{MaxTentativas}}_\n\n  _¡Has agotado tus intentos hoy, el {{data}}! Compra una licencia o espera hasta mañana. {{dataAmanha}}_\n    *🏆 Accede a :* https://bit.ly/licenseSombrio",
             "texto3": "*Intento* _{{tentativas}} de {{MaxTentativas}} para el comando *{{command}}*_ \n\nCompra una licencia o espera hasta mañana para más {{MaxTentativas}} intentos! \n\n_Necesitas una licencia para acceder a este comando._\n\nCompra tu licencia y obtén acceso completo a todos los comandos del bot.\n\n    *🏆 Accede a :* https://bit.ly/licenseSombrio \n    _Desbloquea el acceso a todos los comandos._"
         },
+        "ativar_licenca": {
+            "texto1": "🌟 *¡Tu licencia ya está activa!* 🌟\n\n📧 *Correo electrónico:* {{Email}}\n\n📱 *Teléfono:* {{Telefone}}\n\n🔒 *Estado:* {{Situacao}}\n\nGracias por confiar en *O Sombrio WhatsApp Bot*! Si necesitas ayuda, estamos aquí para asistirte.\n\n📲 Panel de licencias */license*",
+            "texto2": "🎉 *¡Felicidades!* ¡Tu código ha sido verificado con éxito! ✅\n\n¡Bienvenido(a) a *O Sombrio WhatsApp Bot*! Ahora tienes acceso completo a las funciones premium. Si necesitas algo, estamos aquí para ayudar. ¡Disfruta!\n\n📲 Panel de licencias */license*",
+            "texto3": "🚫 *Código inválido.*\n\n*Intentos:* _{{tentativa}} de {{falha}}_\n\nParece que algo salió mal. Por favor, verifica el código e inténtalo de nuevo. Si el problema persiste, contacta con nuestro soporte.\n\n📲 Panel de licencias */license*",
+            "texto4": "❌ *{{email}}* no es un correo electrónico válido.\n\nPara verificar tu licencia, envía el comando *\\`.activar <TU-CORREO>\\`*.\n\n💡 *Ejemplo:* \\`.activar example@gmail.com\\`\n\n📲 Panel de licencias */license*",
+            "texto5": "Introduce el correo electrónico que proporcionaste al comprar la licencia\n\n📲 Panel de licencias */license*",
+            "texto6": "🚫 *Este correo electrónico {{email}} ya está activo*",
+            "texto7": "<h1 style=\"color: #333;\">¡Bienvenido a O Sombrio WhatsApp Bot!</h1><p>Solicitaste la validación de tu licencia para usar el bot <strong>O Sombrio</strong>.</p><p style=\"font-size: 16px; color: #555;\"><strong>Tu código de verificación es:</strong> <span style=\"font-size: 24px; color: #D9534F;\">{{codigoVerificacao}}</span></p><br><p>📲 Panel de licencias: <strong>/license</strong></p><br><p>Para activar tu licencia, haz clic en el enlace de abajo o cópialo y pégalo en tu WhatsApp:</p><p><a href=\"https://wa.me/5545998306644?text=!activar%20{{codigoVerificacao}}\" style=\"color: #007BFF; text-decoration: none;\">https://wa.me/5545998306644?text=!activar%20{{codigoVerificacao}}</a></p><br><p style=\"color: #777;\">Si no solicitaste esta validación, por favor ignora este correo.</p>",
+            "texto8": "✅ *{{nome}}* _- Se ha enviado un código de validación a tu correo electrónico._\n\n📧 *Abre tu correo electrónico* y haz clic en el enlace para validar.\n\n🔑 O puedes enviar el comando *\\`.activar <TU_CODIGO>\\`* directamente en WhatsApp.\n\n💡 *Ejemplo:* \\`.activar JJVQIB\\`\n\n⏳ _Este código es válido por 60 segundos._📲 Panel de licencias */license*",
+            "texto9": "⏳ *¡Tu código ha expirado!* \n\nPor favor, vuelve a enviar el comando para validar tu licencia:\n\n🔄 *\\`.activar <Tu-Correo>\\`*\n\n💡 *Ejemplo:* \\`.activar example@gmail.com\\`",
+            "texto10": "⚠️ *Licencia no encontrada para el correo electrónico:* {{argumento}}*.\n\n🔍 Verifica si el correo electrónico es correcto o adquiere tu licencia en: https://bit.ly/licenseSombrio\n\n📲 Panel de licencias */license*",
+            "texto11": "❌ *Error al ejecutar la activación de la licencia.*\n\nPor favor, contacta para soporte en: https://wa.me/5545998331383. Si no has comprado tu licencia, visita https://bit.ly/licenseSombrio \n\n📲 Panel de licencias */license*"
+        },
         "_antilink": {
             "texto1": "*< ANTI-LINK />*_\n\n*[ ℹ️ ] El antilink está habilitado, pero el participante que envió el enlace es un administrador.*",
             "texto2": "_*< ANTI-LINK />*_\n\n*[ ℹ️ ] El participante @user envió un enlace de un grupo de WhatsApp, por lo que será eliminado.*",
@@ -3802,9 +3815,9 @@
             "texto1": "*[❗𝐈𝐍𝐅𝐎❗] 𝙻𝙾𝚂 𝙲𝙾𝙼𝙰𝙽𝙳𝙾𝚂 +𝟷𝟾 𝙴𝚂𝚃𝙰𝙽 𝙳𝙴𝚂𝙰𝙲𝚃𝙸𝚅𝙰𝙳𝙾𝚂 𝙴𝙽 𝙴𝚂𝚃𝙴 𝙶𝚁𝚄𝙿𝙾, 𝚂𝙸 𝙴𝚂 𝙰𝙳𝙼𝙸𝙽 𝚈 𝙳𝙴𝚂𝙴𝙰 𝙰𝙲𝚃𝙸𝚅𝙰𝚁𝙻𝙾𝚂 𝚄𝚂𝙴 𝙴𝙻 𝙲𝙾𝙼𝙰𝙽𝙳𝙾 #enable modohorny*"
         },
         "adult_comandos_18": {
-    "texto1": "\n  *Intento* _${license.comandosTmp[command].MaxTentativas} de ${license.comandosTmp[command].MaxTentativas}_\n\n  _¡Se te acabaron las oportunidades hoy, día ${data}! Compra la licencia o espera hasta mañana. ${dataAmanha}_\n    *🏆 Accede:* https://bit.ly/licenseSombrio",
-    "texto2": "*Intento* _${license.comandosTmp[command].MaxTentativas} de ${license.comandosTmp[command].MaxTentativas} en el comando *${command}*_ \n\nCompra una licencia o espera hasta mañana para más ${license.comandosTmp[command].MaxTentativas} intentos. \n\n_Necesitas una licencia para acceder a este comando._\n\nCompra tu licencia y obtén acceso total a los comandos del bot.\n\n    *🏆 Accede:* https://bit.ly/licenseSombrio \n    _Desbloquea acceso a todos los comandos._"
-},
+            "texto1": "\n  *Intento* _${license.comandosTmp[command].MaxTentativas} de ${license.comandosTmp[command].MaxTentativas}_\n\n  _¡Se te acabaron las oportunidades hoy, día ${data}! Compra la licencia o espera hasta mañana. ${dataAmanha}_\n    *🏆 Accede:* https://bit.ly/licenseSombrio",
+            "texto2": "*Intento* _${license.comandosTmp[command].MaxTentativas} de ${license.comandosTmp[command].MaxTentativas} en el comando *${command}*_ \n\nCompra una licencia o espera hasta mañana para más ${license.comandosTmp[command].MaxTentativas} intentos. \n\n_Necesitas una licencia para acceder a este comando._\n\nCompra tu licencia y obtén acceso total a los comandos del bot.\n\n    *🏆 Accede:* https://bit.ly/licenseSombrio \n    _Desbloquea acceso a todos los comandos._"
+        },
         "_language": {
             "texto1": [
                 "\n\n_Para cambiar el idioma, envía el comando con la abreviatura del idioma deseado\n\n👉Ejemplo:",
