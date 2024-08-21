@@ -10,11 +10,14 @@ plugins/supersecretlistener.js
 src/glx/db/database.json
 datasecret
 src/licenca/emailAtivos.json
-src/licenca/.gitkeep 
 
+# Ignore tudo em src/licenca, exceto .gitkeep
+src/licenca/*
+!src/licenca/.gitkeep
+
+# Ignore tudo em src/tmplicense, exceto .gitkeep
 src/tmplicense/*
-src/tmplicense/.gitkeep
-
+!src/tmplicense/.gitkeep
 
 #| Files |#
 
